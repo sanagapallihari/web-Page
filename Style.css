@@ -1,0 +1,108 @@
+:root{
+  --accent: rgba(0,0,0,0.55);
+  --muted: rgba(255,255,255,0.9);
+  --max-width: 1200px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+  color:var(--muted);
+  background: #000;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Header / nav */
+.site-header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  padding:18px 32px;
+  z-index:30;
+  display:flex;
+  justify-content:flex-end;
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  backdrop-filter: blur(6px);
+}
+
+.nav ul{
+  list-style:none;
+  display:flex;
+  gap:28px;
+  align-items:center;
+}
+.nav a{
+  color:var(--muted);
+  text-decoration:none;
+  font-weight:400;
+  font-size:14px;
+  opacity:0.95;
+}
+.nav a:hover{opacity:1;text-decoration:underline}
+
+/* Hero */
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  padding:120px 40px 60px;
+  background-image:
+    linear-gradient(180deg, rgba(0,0,0,0.18), rgba(0,0,0,0.42)),
+    url("https://images.unsplash.com/photo-1503264116251-35a269479413?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=7c2c0f0cfb0d3f7f6a9b1d1f4e4a4f5d");
+  background-size:cover;
+  background-position:center;
+  border-radius:18px;
+  margin:24px;
+  max-width:calc(var(--max-width));
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  overflow:hidden;
+}
+
+/* inner content area aligned left */
+.hero-inner{
+  max-width:560px;
+  padding:64px 36px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  border-radius:10px;
+}
+
+/* Display name style */
+.hero-name{
+  font-family:"Playfair Display", Georgia, serif;
+  font-size:88px;
+  line-height:0.88;
+  letter-spacing:-1px;
+  color:#fff;
+  margin-bottom:12px;
+  font-weight:700;
+  text-shadow: 0 4px 14px rgba(0,0,0,0.45);
+}
+
+/* Subtitle */
+.hero-sub{
+  font-size:20px;
+  color:rgba(255,255,255,0.92);
+  margin-top:6px;
+  font-weight:300;
+}
+
+/* Responsive adjustments */
+@media (max-width:1000px){
+  .hero{
+    margin:14px;
+    padding:100px 28px;
+    border-radius:12px;
+  }
+  .hero-name{font-size:64px}
+}
+@media (max-width:640px){
+  .site-header{padding:12px 18px}
+  .nav ul{gap:14px}
+  .hero{padding:80px 18px}
+  .hero-inner{padding:36px 18px}
+  .hero-name{font-size:40px}
+  .hero-sub{font-size:16px}
+}
